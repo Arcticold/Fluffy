@@ -12,7 +12,7 @@ if (count($allQuestions) != 0) {
 			<script type="text/javascript">var rightAnswer = "'.$allQuestions[0]['answer_1'].'";
 					var currentAnswer = "KAH";</script>';
 } else {
-	echo 'Game over';
+	echo 'Game overrr';
 }
 
 Mysql::c()->close();
