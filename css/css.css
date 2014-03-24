@@ -3,37 +3,21 @@
 body 
 {
 	margin:0; padding:0; 
-	background:url("taust.jpg");
+	background:url("taust.jpg") center fixed;
 	background-repeat:no-repeat;
 	background-size:cover;
 }
 
-div#gameAreaWrapper {width:800px; height:400px; margin:250px auto 0 auto; background:grey;}
-//div#ID {width:158px; height:26px;  background:grey;} // hall taust
+div#headerwrap {width:800px; height:40px; margin:100px auto 0 auto;}
+div#gameAreaWrapper {width:800px; height:400px; margin:0 auto 0 auto; background:grey;}
+
+
+
+
+
+
+
 
 
 input[type="button"]{}
-button {background:none transparent;border:none;}
-
-
-	/* Main site body */
-.wrapper {
-  width: 940px;
-  margin: 0 auto;
-  position: relative; /* Ensure absolute positioned child elements are relative to this */
-}
-
-/* Absolute positioned wrapper for the element you want to fix position */
-.fixed-wrapper {
-  width: 220px;
-  position: absolute;
-  top: 0;
-  left: -240px; /* Move this out to the left of the site body, leaving a 20px gutter */
-}
-
-/* The element you want to fix the position of */
-.fixed {
-  width: 220px;
-  position: fixed;
-  /* Do not set top / left! */
-}
+div#headerwrap button.link {background:none transparent;border:none;}

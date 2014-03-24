@@ -14,16 +14,20 @@ session_start();
 
 <body>
 
-
-<div class="wrapper">
-  <div class="fixed-wrapper">
-    <div class="fixed">
-      	<div class="TEdit" id="ID" style="position: relative; left: 0%; top: 0px;">
-    		<input type="text" name="ID" value="ID" size="10px">
-		</div>
-    </div>
-  </div>
-</div>
+	<div id="headerwrap">
+	<button style="float:right;">
+		Register
+	</button>
+	<button class="link" style="float:right; margin-right:10px">
+		Login
+	</button>
+	<div class="TEdit" id="PW" style="float:right; margin-right:10px">
+    	<input type="password" name="PW" value="Password" size="10px">
+	</div>
+	<div class="TEdit" id="ID" style="float:right; margin-right:10px">
+		<input type="text" name="ID" value="ID" size="10px">
+	</div>
+	</div>
 
 
 	
@@ -36,19 +40,3 @@ session_start();
 </body>
 </html>
 
-<!-- 
-
-	
-	<div class="TEdit" id="PW" style="position: relative; left: 665px; top: 220px;">
-    	<input type="password" name="PW" value="Password" size="10px">
-	</div>
-	
-	<button class="link" style="position: absolute; left: 1000px; top: 220px;">
-		Register
-	</button>
-	
-	<button class="link" style="position: absolute; left: 760px; top: 220px;">
-		Login
-	</button>
-	
--->
