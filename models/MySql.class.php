@@ -21,6 +21,7 @@ class MySql {
 	
 	public function query($query) {
 		mysqli_query($this->connection, $query);
+		return (int)mysqli_insert_id($this->connection);
 	}
 	
 	public function selectQuery($query) {
