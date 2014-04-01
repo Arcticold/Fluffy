@@ -27,6 +27,9 @@ class MySql {
 	public function selectQuery($query) {
 		$rawResult = mysqli_query($this->connection, $query);
 		$result = array();
+		if (is_bool($rawResult)) {
+			return $result;
+		}
 		while ($row = mysqli_fetch_array($rawResult)) {
 			$result[] = $row;
 		}

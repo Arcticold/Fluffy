@@ -50,16 +50,20 @@ function getQuestionText(id)
 
 
 function signinCallback(authResult) {
-	  if (authResult['status']['signed_in']) {
-	    // Update the app to reflect a signed in user
-	    // Hide the sign-in button now that the user is authorized, for example:
-	    document.getElementById('signinButton').setAttribute('style', 'display: none');
+	  if (authResult['status']['google_logged_in'])
+	  {
+		  if (logOut == true) {
+			  gapi.auth.signOut();
+			  document.location = siteUrl;
+		  } else {
+			  $.get("https://www.googleapis.com/plus/v1/people/me?access_token=" + authResult["access_token"], function(data){
+				  document.location = siteUrl + "?googleId=" + data["id"] + "&googleDisplayName=" + data["displayName"];
+			  });
+		  }
 	  } else {
-	    // Update the app to reflect a signed out user
-	    // Possible error values:
-	    //   "user_signed_out" - User is signed-out
-	    //   "access_denied" - User denied access to your app
-	    //   "immediate_failed" - Could not automatically log in the user
-	    console.log('Sign-in state: ' + authResult['error']);
+		  if (authResult['error'] == "user_signed_out")
+		  {
+			  document.location = siteUrl + "?logOut=1";
+		  }
 	  }
-	}
+}
