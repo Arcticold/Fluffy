@@ -35,6 +35,18 @@ class MySql {
 		}
 		return $result;
 	}
+
+	public function selectKeyValueQuery($query, $key, $value) {
+		$rawResult = mysqli_query($this->connection, $query);
+		$result = array();
+		if (is_bool($rawResult)) {
+			return $result;
+		}
+		while ($row = mysqli_fetch_array($rawResult)) {
+			$result[$row[$key]] = $row[$value];
+		}
+		return $result;
+	}
 	
 	public function close() {
 		mysqli_close($this->connection);

@@ -7,7 +7,13 @@ body
 }
 
 div#headerwrap {width:800px; height:40px; margin:100px auto 0 auto; position:relative;}
-div#gameAreaWrapper {width:800px; height:400px; margin:0 auto 0 auto; background:grey;}
+div#gameAreaWrapper {width:800px; height:400px; margin:0 auto 0 auto; background:grey; position:relative;}
+div#accounts {width:400px;}
+div#end_score {width:400px;}
+
+div#questionText {width:100%; padding:10px 0; text-align:center;}
+img.choice {position:absolute; cursor:pointer;}
+//img.choice:active {opacity:0.7; filter:alpha(opacity=70);}
 
 input[type="button"]{}
 div#headerwrap button.link {background:none transparent;border:none;}

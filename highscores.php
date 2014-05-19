@@ -35,10 +35,18 @@ if (!$user) {
 <div id="gameAreaWrapper">Please log in to see this page.</div>
 <?php
 } else {
-	$highscores = Mysql::c()->selectQuery('SELECT accounts.username, SUM(scores.score) AS end_score FROM accounts LEFT JOIN scores ON accounts.entry = scores.account_id GROUP BY scores.game_try_id ORDER_BY end_score DESC')
-?>
+	$highscores = Mysql::c()->selectQuery('SELECT accounts.username, SUM(scores.score) AS end_score FROM accounts LEFT JOIN scores ON accounts.entry = scores.account_id GROUP BY scores.game_try_id ORDER BY end_score DESC');
+	?>
 <div id="gameAreaWrapper">
-	
+<?php
+$amount = sizeof($highscores);
+
+for($i = 0; $i < $amount; $i++)
+{
+	echo '<div id="accounts" style="float:left";>'.$highscores[$i]['username'].'</div>';
+	echo '<div id="end_score" style="float:right";>'.$highscores[$i]['end_score'].'</div>';
+}
+?>
 </div>
 <?php
 }

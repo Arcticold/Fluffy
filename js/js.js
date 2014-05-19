@@ -48,6 +48,13 @@ function getQuestionText(id)
 	});
 }
 
+function googleButtonPre()
+{ 
+	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+	po.src = 'https://apis.google.com/js/client:plusone.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+}
+
 
 function signinCallback(authResult) {
 	  if (authResult['status']['google_logged_in'])
@@ -66,4 +73,43 @@ function signinCallback(authResult) {
 			  document.location = siteUrl + "?logOut=1";
 		  }
 	  }
+}
+
+var questionTextDiv;
+var nextQuestionId = -1;
+var lastAnswer = -1;
+var answers = new Array();
+
+function submitAnswer(answerChoice){
+	lastAnswer++;
+	if (answers[lastAnswer] != answerChoice) {
+		lastAnswer = -1;
+		alert('FAIL! Start again!');
+		questionTextDiv.show();
+		return;
+	}
+	if (lastAnswer == 0) {
+		questionTextDiv.hide();
+	}
+	if (answers.length == lastAnswer + 1) {
+		if (nextQuestionId > -1) {
+			getQuestionText(nextQuestionId);
+			return;
+		}
+		alert('GAME OVER');
+		getQuestionText(0);
+		return;
+	}
+	$(".choice").each(function(){
+		randomizeElementPosition($(this));
+	});
+}
+
+function randomizeElementPosition(element){
+	var topPosition = Math.floor((Math.random() * 320) + 40);
+	var leftPosition = Math.floor((Math.random() * 760));
+	element.animate({
+		top:topPosition,
+		left:leftPosition
+	})
 }

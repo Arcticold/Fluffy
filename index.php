@@ -14,18 +14,14 @@ Mysql::c()->connect(MYSQL_HOST, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DATABASE);
 <link rel="stylesheet" type="text/css" href="css/css.css">
 
 <script type="text/javascript">
-   var logOut = <?php if ($_REQUEST['logOut']) { echo 'true'; } else { echo 'false'; } ?>;
+   var logOut = <?php if (isset($_REQUEST['logOut'])) { echo 'true'; } else { echo 'false'; } ?>;
 </script>
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
 
 <script type="text/javascript">
   var siteUrl = "<?php echo SITE_URL; ?>";
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/client:plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-   })();
+  googleButtonPre();
 </script>
 
 <body>
@@ -50,7 +46,7 @@ require_once('userheader.php');
 	    		echo 'openRegisterWindow();';
 	    	}
 	    	?>
-		getQuestionText(1);
+		getQuestionText(0);
 	</script>
 	
 </body>
