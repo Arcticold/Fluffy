@@ -40,7 +40,7 @@
 	</button>
 	
 	<div class="messagepop pop">
-	    <form method="post" action="">
+	    <form method="post" action="<?php echo SITE_URL; ?>">
 	    	<?php
 		    	if (count($registrationErrorMessages) > 0) {
 		    		echo '<p style="color:red;">'.implode('<br />', $registrationErrorMessages).'</p>';
