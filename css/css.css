@@ -13,7 +13,7 @@ div#end_score {width:400px;}
 
 div#questionText {width:100%; padding:10px 0; text-align:center;}
 img.choice {position:absolute; cursor:pointer;}
-img.choice:active {opacity:0.7; filter:alpha(opacity=70);}
+
 
 input[type="button"]{}
 div#headerwrap button.link {background:none transparent;border:none;}
