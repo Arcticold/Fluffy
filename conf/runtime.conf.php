@@ -11,8 +11,8 @@ define('SITE_URL', 			'http://fluffyapp.azurewebsites.net/');
 
 define('MYSQL_HOST', 		'sql3.freesqldatabase.com');
 
-define('MYSQL_USERNAME', 	'sql340809');
+define('MYSQL_USERNAME', 	'sql341641');
 
-define('MYSQL_PASSWORD', 	'lI5*wL7*');
+define('MYSQL_PASSWORD', 	'eE1!cD7%');
 
-define('MYSQL_DATABASE', 	'sql340809');
+define('MYSQL_DATABASE', 	'sql341641');
